@@ -4,14 +4,37 @@ import java.time.LocalDateTime;
 
 public class Ticket {
     private final int id;
+    private final Vehicle vehicle;
+    private final Spot spot;
+    private final LocalDateTime entryTime;
+
+    private LocalDateTime exitTime;
     private TicketStatus status;
-    private Spot spot;
-    private final LocalDateTime dateTime;
-    public Ticket(int id, TicketStatus status, Spot spot, LocalDateTime dateTime) {
+    private double amount;
+
+
+    public Ticket(int id, Spot spot,Vehicle vehicle, LocalDateTime entryTime) {
         this.id = id;
-        this.status = status;
+        this.status = TicketStatus.ACTIVE;
         this.spot = spot;
-        this.dateTime = dateTime;
+        this.entryTime = entryTime;
+        this.vehicle = vehicle;
+    }
+
+    public void setExitTime(LocalDateTime exitTime) {
+        this.exitTime = exitTime;
+    }
+
+    public LocalDateTime getExitTime() {
+        return exitTime;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
     public int getId() {
@@ -30,12 +53,9 @@ public class Ticket {
         return spot;
     }
 
-    public void setSpot(Spot spot) {
-        this.spot = spot;
-    }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
+    public LocalDateTime getEntryTime() {
+        return entryTime;
     }
 
 }

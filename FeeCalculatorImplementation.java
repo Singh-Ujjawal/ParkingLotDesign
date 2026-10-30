@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 public class FeeCalculatorImplementation implements FeeCalculator {
     @Override
-    public double calculateFee(SpotType type, LocalDateTime entryTime, LocalDateTime exitTime) {
+    public double calculateFee(VehicleType type, LocalDateTime entryTime, LocalDateTime exitTime) {
          if(type==null || entryTime==null || exitTime==null) {
              throw new IllegalArgumentException("Type and timestamps are required");
          }

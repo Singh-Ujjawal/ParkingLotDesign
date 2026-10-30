@@ -2,12 +2,18 @@ package ParkingLotIV;
 
 public class Spot {
     private final int id;
-    private final SpotType spotType;
+    private final VehicleType spotType;
+    private final int floorNumber;
     private Vehicle vehicle;
 
-    public Spot(int id,SpotType spotType) {
+    public Spot(int id,VehicleType spotType,int floorNumber) {
         this.id = id;
         this.spotType = spotType;
+        this.floorNumber = floorNumber;
+    }
+
+    public int getFloorNumber() {
+        return floorNumber;
     }
 
     public int getId() {
@@ -22,7 +28,7 @@ public class Spot {
         this.vehicle = vehicle;
     }
 
-    public SpotType getSpotType() {
+    public VehicleType getSpotType() {
         return spotType;
     }
 
